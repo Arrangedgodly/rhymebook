@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-  </head>
+    <script src="https://kit.fontawesome.com/90f8a53b33.js" crossorigin="anonymous"></script>
+ </head>
   <body>
     <header class="header">
       <h1 class="header-title">Notes App</h1>
@@ -10,25 +10,25 @@
     <main>
       <div class="page">
         <form class="form note-form">
-          <input 
-            name="title"
-            type="text"
-            class="form-input form-input-title"
-            >
-          <textarea 
-              name="body"
-              type="text-field"
-              class="form-input form-input-body"
-              >
+          <input name="title" type="text" class="form-input form-input-title" />
+          <textarea
+            name="body"
+            type="text-field"
+            class="form-input form-input-body"
+          >
           </textarea>
         </form>
         <div class="rhymes-wrapper">
-          <h2 class="rhymes-title">Suggested Rhymes</h2>
-          <ul class="rhymes">
-          </ul>
-          <h2 class="rhymes-title">Suggested Sound-a-Likes</h2>
-          <ul class="rhymes-alt">
-          </ul>
+          <h2 class="rhymes-title">Suggested Rhymes <i class="fa-regular fa-eye"></i></h2>
+          <ul class="rhymes rhymes-def"></ul>
+        </div>
+        <div class="rhymes-wrapper">
+          <h2 class="rhymes-title">Suggested Sound-a-Likes <i class="fa-regular fa-eye"></i></h2>
+          <ul class="rhymes rhymes-sound"></ul>
+        </div>
+        <div class="rhymes-wrapper">
+          <h2 class="rhymes-title">Suggested Related Terms <i class="fa-regular fa-eye"></i></h2>
+          <ul class="rhymes rhymes-rel"></ul>
         </div>
         <template id="rhyme">
           <li class="rhyme"></li>
