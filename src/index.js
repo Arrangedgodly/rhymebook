@@ -41,11 +41,46 @@ bodyInput.addEventListener("input", (evt) => {
           sectionSelector: ".rhymes-sound"
         });
       });
+    api.getRelatedNouns(input)
+      .then(words => {
+        processApi({
+          data: words,
+          sectionSelector: ".rhymes-rel-noun"
+        });
+      });
+      api.getRelatedAdjectives(input)
+      .then(words => {
+        processApi({
+          data: words,
+          sectionSelector: ".rhymes-rel-adj"
+        });
+      });
+      api.getSynonyms(input)
+      .then(words => {
+        processApi({
+          data: words,
+          sectionSelector: ".rhymes-syn"
+        });
+      });
+    api.getAntonyms(input)
+      .then(words => {
+        processApi({
+          data: words,
+          sectionSelector: ".rhymes-ant"
+        });
+      });
     api.getRelatedWords(input)
       .then(words => {
         processApi({
           data: words,
           sectionSelector: ".rhymes-rel"
+        });
+      });
+    api.getFrequentFollowers(input)
+      .then(words => {
+        processApi({
+          data: words,
+          sectionSelector: ".rhymes-follow"
         });
       });
   });
