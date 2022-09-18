@@ -1,0 +1,11 @@
+@import url("./normalize.css");
+@import url("./blocks/header.css");
+@import url("./blocks/page.css");
+@import url("./blocks/form.css");
+@import url("./blocks/rhymes.css");
+@import url("./blocks/rhyme.css");
+@import url("./blocks/footer.css");
+
+html {
+  background-color: #144552;
+}
