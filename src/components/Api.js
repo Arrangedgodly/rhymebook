@@ -3,13 +3,25 @@ export class Api {
     this.url = url;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
+
   getRhyme(word) {
     return fetch(`${this.url}?rel_rhy=${word}`)
-      .then(res => res.json())
+      .then(this._checkResponse)
   }
 
   getSoundAlike(word) {
     return fetch(`${this.url}?sl=${word}`)
-      .then(res => res.json())
+      .then(this._checkResponse)
+  }
+
+  getRelatedWords(word) {
+    return fetch(`${this.url}?rel_jjb=${word}`)
+      .then(this._checkResponse)
   }
 }
