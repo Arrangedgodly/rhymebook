@@ -5,6 +5,17 @@
   align-items: center;
 }
 
+.form-engine {
+  display: flex;
+  justify-content: space-evenly;
+  width: 85vw;
+}
+
+.form-engine-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-label {
   display: flex;
   flex-direction: column;
@@ -13,10 +24,19 @@
   text-align: center;
   color: #fff;
   font-size: 2.2vw;
+  margin: 1vh auto;
 }
 
 .form-label-max {
   margin: .5vh auto;
+}
+
+.form-label-alt {
+  display: flex;
+  font-size: 2vw;
+  justify-content: center;
+  margin: .5vh auto;
+  color: #fff;
 }
 
 .form-input {
@@ -28,6 +48,18 @@
 
 .form-input-max {
   margin: .5vh auto;
+}
+
+.form-input-alt {
+  margin: .5vh auto;
+  margin-left: 1vh;
+}
+
+.form-input-desc {
+  font-size: 1.2vw;
+  color: #fff;
+  margin: .5vh auto;
+  font-style: italic;
 }
 
 .form-input-title {

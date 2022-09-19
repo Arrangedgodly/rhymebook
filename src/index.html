@@ -38,7 +38,41 @@
             >
             </textarea>
           </label>
-          <label for="max" class="form-label">Max Query Returns
+          <h3 class="form-label">Search Engine</h3>
+          <div class="form-engine">
+            <div class="form-engine-wrapper">
+              <label for="broad" class="form-label-alt"
+                >Broad
+                <input
+                  name="engine"
+                  id="broad"
+                  type="radio"
+                  value="topic"
+                  class="form-input-alt"
+                />
+              </label>
+              <p class="form-input-desc">
+                Provides more search results, less considerate of Themes
+              </p>
+            </div>
+            <div class="form-engine-wrapper">
+              <label for="specific" class="form-label-alt"
+                >Specific
+                <input
+                  name="engine"
+                  id="specific"
+                  type="radio"
+                  value="ml"
+                  class="form-input-alt"
+                />
+              </label>
+              <p class="form-input-desc">
+                Provides less search results, but guarentees thematic tie ins
+              </p>
+            </div>
+          </div>
+          <label for="max" class="form-label"
+            >Max Query Returns
             <input
               name="max"
               type="range"
@@ -98,7 +132,7 @@
         </div>
         <div class="rhymes-wrapper">
           <h2 class="rhymes-title">
-            Suggested Antonyms 
+            Suggested Antonyms
             <button type="button" class="eye">
               <i class="fa-regular fa-eye"></i>
             </button>
@@ -107,7 +141,7 @@
         </div>
         <div class="rhymes-wrapper">
           <h2 class="rhymes-title">
-            Suggested Related Terms 
+            Suggested Related Terms
             <button type="button" class="eye">
               <i class="fa-regular fa-eye"></i>
             </button>
@@ -116,7 +150,7 @@
         </div>
         <div class="rhymes-wrapper">
           <h2 class="rhymes-title">
-            Suggested Following Words 
+            Suggested Following Words
             <button type="button" class="eye">
               <i class="fa-regular fa-eye"></i>
             </button>
