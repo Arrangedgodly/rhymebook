@@ -1,0 +1,11 @@
+.eye {
+  border-style: none;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+}
+
+.eye:hover {
+  color: #000;
+  cursor: pointer;
+}

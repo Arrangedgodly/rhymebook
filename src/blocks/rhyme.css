@@ -3,4 +3,20 @@
   font-size: 1vw;
   margin: .8vh 0;
   color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 1280px) {
+  .rhyme {
+    font-size: 1.4vw;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .rhyme {
+    font-size: 3vw;
+  }
 }

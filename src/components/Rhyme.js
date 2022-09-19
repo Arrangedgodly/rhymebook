@@ -15,6 +15,7 @@ export class Rhyme {
   generateRhyme = () => {
     this._element = this._getTemplate();
     this._element.textContent = this.word;
+    this._element.setAttribute("title", this.word);
     return this._element;
   }
 

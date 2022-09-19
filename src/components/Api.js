@@ -1,6 +1,11 @@
 export class Api {
   constructor({ url }) {
     this.url = url;
+    this.max = 150;
+  }
+
+  setMax(val) {
+    this.max = val;
   }
 
   _checkResponse(res) {
@@ -10,43 +15,43 @@ export class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getRhyme(word) {
-    return fetch(`${this.url}?rel_rhy=${word}`)
+  getRhyme(word, topic) {
+    return fetch(`${this.url}?rel_rhy=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getSoundAlike(word) {
-    return fetch(`${this.url}?rel_nry=${word}`)
+  getSoundAlike(word, topic) {
+    return fetch(`${this.url}?rel_nry=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getRelatedAdjectives(word) {
-    return fetch(`${this.url}?rel_jja=${word}`)
+  getRelatedAdjectives(word, topic) {
+    return fetch(`${this.url}?rel_jja=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getRelatedNouns(word) {
-    return fetch(`${this.url}?rel_jjb=${word}`)
+  getRelatedNouns(word, topic) {
+    return fetch(`${this.url}?rel_jjb=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getRelatedWords(word) {
-    return fetch(`${this.url}?rel_trg=${word}`)
+  getRelatedWords(word, topic) {
+    return fetch(`${this.url}?rel_trg=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getSynonyms(word) {
-    return fetch(`${this.url}?rel_syn=${word}`)
+  getSynonyms(word, topic) {
+    return fetch(`${this.url}?rel_syn=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getAntonyms(word) {
-    return fetch(`${this.url}?rel_ant=${word}`)
+  getAntonyms(word, topic) {
+    return fetch(`${this.url}?rel_ant=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 
-  getFrequentFollowers(word) {
-    return fetch(`${this.url}?rel_bga=${word}`)
+  getFrequentFollowers(word, topic) {
+    return fetch(`${this.url}?rel_bga=${word}&topic=${topic}&max=${this.max}`)
       .then(this._checkResponse)
   }
 }

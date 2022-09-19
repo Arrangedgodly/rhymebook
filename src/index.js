@@ -12,6 +12,9 @@ const themeInput = document.querySelector(".form-input-title");
 const bodyInput = document.querySelector(".form-input-body");
 bodyInput.value = "";
 
+const spaceKeyCode = 32;
+const enterKeyCode = 13;
+
 function processApi({data, sectionSelector}) {
   const section = document.querySelector(sectionSelector);
   section.innerHTML = "";
@@ -25,75 +28,82 @@ function processApi({data, sectionSelector}) {
   })
 }
 
-bodyInput.addEventListener("input", (evt) => {
-    evt.preventDefault();
-    const input = getLastWord(bodyInput.value);
-    const theme = themeInput.value;
-    api.getRhyme(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-def"
+bodyInput.addEventListener("keydown", (evt) => {
+    if (evt.keyCode === spaceKeyCode || evt.keyCode === enterKeyCode) {
+      const input = getLastWord(bodyInput.value);
+      const theme = themeInput.value;
+      api.getRhyme(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-def"
+          });
         });
-      });
-    api.getSoundAlike(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-sound"
+      api.getSoundAlike(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-sound"
+          });
         });
-      });
-    api.getRelatedNouns(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-rel-noun"
+      api.getRelatedNouns(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-rel-noun"
+          });
         });
-      });
-      api.getRelatedAdjectives(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-rel-adj"
+        api.getRelatedAdjectives(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-rel-adj"
+          });
         });
-      });
-      api.getSynonyms(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-syn"
+        api.getSynonyms(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-syn"
+          });
         });
-      });
-    api.getAntonyms(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-ant"
+      api.getAntonyms(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-ant"
+          });
         });
-      });
-    api.getRelatedWords(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-rel"
+      api.getRelatedWords(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-rel"
+          });
         });
-      });
-    api.getFrequentFollowers(input)
-      .then(words => {
-        processApi({
-          data: words,
-          sectionSelector: ".rhymes-follow"
+      api.getFrequentFollowers(input, theme)
+        .then(words => {
+          processApi({
+            data: words,
+            sectionSelector: ".rhymes-follow"
+          });
         });
-      });
+      }
   });
 
-  const buttons = Array.from(document.querySelectorAll(".fa-eye"));
+  const buttons = Array.from(document.querySelectorAll(".eye"));
   buttons.forEach(button => {
-    button.addEventListener("mouseover", () => {
-      button.classList.add("fa-eye-slash");
-    });
     button.addEventListener("click", () => {
-      const rhymes = button.closest(".rhymes");
+      const rhymes = button.closest(".rhymes-wrapper");
       rhymes.classList.add("rhymes-hidden");
     });
-  })
+  });
+
+  const maxRange = document.querySelector(".form-input-max");
+  const maxRangeLabel = document.querySelector(".form-label-max");
+  maxRangeLabel.textContent = `${maxRange.value}`;
+
+  maxRange.oninput = function() {
+    maxRangeLabel.textContent = `${maxRange.value}`;
+    api.setMax(maxRange.value);
+  }
