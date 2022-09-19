@@ -8,6 +8,7 @@ function getLastWord(str) {
 
 const api = new Api({url: "https://api.datamuse.com/words"});
 
+const themeInput = document.querySelector(".form-input-title");
 const bodyInput = document.querySelector(".form-input-body");
 bodyInput.value = "";
 
@@ -27,6 +28,7 @@ function processApi({data, sectionSelector}) {
 bodyInput.addEventListener("input", (evt) => {
     evt.preventDefault();
     const input = getLastWord(bodyInput.value);
+    const theme = themeInput.value;
     api.getRhyme(input)
       .then(words => {
         processApi({
