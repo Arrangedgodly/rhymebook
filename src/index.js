@@ -107,3 +107,10 @@ bodyInput.addEventListener("keydown", (evt) => {
     maxRangeLabel.textContent = `${maxRange.value}`;
     api.setMax(maxRange.value);
   }
+
+  const engineRadios = document.querySelectorAll('[name="engine"]');
+  engineRadios.forEach(radio => {
+    radio.onclick = function () {
+      api.changeEngine(this.value);
+    };
+  });
