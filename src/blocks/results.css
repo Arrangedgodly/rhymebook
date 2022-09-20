@@ -1,6 +1,12 @@
 .results {
-    width: 50vw;
-    position: fixed;
+    width: 35vw;
+    height: 92vh;
+    position: absolute;
     right: 0;
-    top: 10vh;
+    top: 8vh;
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    background-color: #119da4;
 }

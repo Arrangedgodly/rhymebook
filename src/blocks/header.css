@@ -3,6 +3,9 @@
   justify-content: center;
   background-color: #272640;
   height: 8vh;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 2;
 }
 
 .header-title {

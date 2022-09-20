@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50vw;
+  width: 65vw;
+  height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .form-engine {
@@ -42,7 +45,7 @@
 
 .form-input {
   width: 40vw;
-  margin: 3vh auto;
+  margin: 1vh auto;
   font-size: 2vw;
   border-color: #312244;
 }
@@ -61,6 +64,7 @@
   color: #fff;
   margin: .5vh auto;
   font-style: italic;
+  text-align: center;
 }
 
 .form-input-title {
@@ -69,7 +73,7 @@
 }
 
 .form-input-body {
-  height: 100%;
-  width: 100%;
+  height: 25vh;
+  width: 60vw;
   text-align: center;
 }

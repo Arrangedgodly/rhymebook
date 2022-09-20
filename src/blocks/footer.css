@@ -6,7 +6,9 @@
   bottom: 0;
   left: 0;
   height: 7vh;
-  width: 100%;
+  width: 65vw;
+  position: fixed;
+  z-index: 0;
 }
 
 .footer-text {

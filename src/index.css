@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap');
 @import url("./normalize.css");
 @import url("./blocks/header.css");
 @import url("./blocks/page.css");
@@ -10,4 +11,11 @@
 
 html {
   background-color: #144552;
+  font-family: 'Reem Kufi Fun', sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
